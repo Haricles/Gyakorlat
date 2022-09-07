@@ -1,6 +1,6 @@
 '''
-Alakítsuk át az előbbi programot úgy, hogy a program arról adjon tájékoztatást, hogy pontosan hányszor szerepel a
-felhasználó által megadott szín a listában!
+Egészítsük ki az előbbi programot úgy, hogy a kiértékelést követően a felhasználó által megadott szín kerüljön
+ felvételre a listába, és csak ezután történjen meg a lista tartalmának kiírása!
 '''
 
 paletta = ['kék', 'piros', 'fehér', 'fekete', 'zöld', 'sárga', 'barna', 'piros', 'fehér', 'szürke']
