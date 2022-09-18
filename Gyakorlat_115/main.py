@@ -28,6 +28,8 @@ települes=random.choice(telepulesek)+" "+ random.choice(utcak)+" utca "+ str(ra
 diak_adatok=[{"Név":vez_kereszt,"Kor":random.randint(14,19),
               "Évfolyam":évfoly,
               "Osztaly":random.choice(osztaly),
-              "Cím":települes}]
+              "Cím":{"Települesek":random.choice(telepulesek),
+                     "Utcak":random.choice(utcak),
+                     "Házszám":random.randint(1,50)}}]
 
 print (pprint.pformat(diak_adatok))
