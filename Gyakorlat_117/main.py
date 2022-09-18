@@ -89,12 +89,6 @@ for elem in autok:
 atlag = osszeg // len(autok)
 print ("Az egy autóra jutó átlagos javítási költség:",atlag,"Ft")
 
-
-
-
-
-
-
 a = input("Kerem a rendszámot: ").upper()
 for elem in autok:
     if elem['rendszam'] == a:
