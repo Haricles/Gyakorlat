@@ -35,9 +35,9 @@ amelynek a márkája vagy a típusa tartalmazza az adott betűt! A kis- és nagy
     Adjon meg egy betűt!    X
     A megadott betű az alábbi autók márka- vagy típusmegnevezésében fordul elő:
     Ford C-Max
-
 '''
-import pprint
+
+
 '''
 Az adatok beolvasása fájlból,
 egy-egy sor az 'adatok' nevű lista egy-egy eleme
@@ -48,11 +48,11 @@ with open('autok_listaja.txt', 'r', encoding='utf-8') as fajl:
         # strip() metódus eltávolítja a sorvégi \n-t
         adatok.append(sor.strip())
 
-
 '''
 A 'autok' nevű lista 'auto' nevű szótár típusokat fog tartalmazni,
 egy autó adatait egy szótár tárolja
 '''
+
 auto = {}  # egy auto adatai
 autok = []  # szótárakat tartalmazó lista
 for elem in adatok:
@@ -71,7 +71,7 @@ for elem in adatok:
     auto = {}  # egy új, üres szótár objektum deklarálása ugyanazon a néven
 
 print (autok)
-
+#1.feladat
 max_kor= autok[0]['kor']
 for kocsi in autok:
     if kocsi['kor'] > max_kor:
@@ -81,18 +81,64 @@ print ("A legidősebb autó:",kocsi['rendszam'],kocsi['marka'],kocsi['tipus'],ma
 for szam in autok:
     if szam['javitva'] == True:
         print ("A már megjavított autók rendszáma:",szam['rendszam'])
-
+#1.feladat vége
+#2.feladat
 osszeg = 0
 for elem in autok:
     if elem['koltseg']:
         osszeg = osszeg + (elem['koltseg'])
 atlag = osszeg // len(autok)
 print ("Az egy autóra jutó átlagos javítási költség:",atlag,"Ft")
-
+#2.feladat vége
+#3.feladat
 a = input("Kerem a rendszámot: ").upper()
 for elem in autok:
     if elem['rendszam'] == a:
         print ("A megadott rendszámú autó a műhelyben van.")
+#3.feladat vége
+#4.feladat
+i = 0
+while i < len(autok):
+    if autok[i]['rendszam']==a:
+        break
+    else:
+        i+=1
+if i < len(autok):
+    print ("Benne van")
+else:
+    print ("Nincs benne")
+#4.feladat vége
+#5.feladat
+betü = input("Kerek egy betüt! ")
+i = 0
+while i < len(autok):
+    if autok[i]['marka'].__contains__(betü) or autok[i]['tipus'].__contains__(betü):
+        break
+    else:
+        i+=1
+if i < len(autok):
+    print ("Tartalmazza a betüt",autok[i])
+else:
+    print ("Nem tartalmazza a betüt")
+#5.feladat vége
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
