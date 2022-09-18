@@ -32,4 +32,4 @@ diak_adatok=[{"Név":vez_kereszt,"Kor":random.randint(14,19),
                      "Utcak":random.choice(utcak),
                      "Házszám":random.randint(1,50)}}]
 
-print (pprint.pformat(diak_adatok))
+print (pprint.pformat(diak_adatok)) 
