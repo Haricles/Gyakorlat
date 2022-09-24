@@ -7,8 +7,8 @@ Befejezésként a program a képernyőre írja ki a megadott kutyák adatait!
 import random
 
 class Kutya_adatok():
-    nem=["him","szuka"]
-    
+    nem=["kan","szuka"]
+
     def __init__(self,nev=None,eletkor=random.randint(0,30),nem=random.choice(nem)):
         self.nev=nev
         self.eletkor=eletkor
