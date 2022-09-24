@@ -4,6 +4,7 @@ Az egyik metódusa állíptsa meg az aktuális év és a születési év alapjá
 pedig adjon vissza egy f-sztringet, amelyben mondatszerűen szerepelnek a
 diák adatai: Szia, Kiss Péter vagyok, a 10.A osztályba járok, 16 éves vagyok.
 '''
+import datetime
 class Diak():
     def __init__(self,nev=None,osztaly=None,szulev=0):
         self.nev=nev
@@ -11,7 +12,7 @@ class Diak():
         self.szulev=szulev
 
     def diak_eletkor(self):
-        return 2022-self.szulev
+        return datetime.datetime.now().year-self.szulev
 
     def kiiratas(self):
         print (f"Szia, {self.nev} vagyok, a {self.osztaly} osztályba járok, {self.diak_eletkor()} éves vagyok.")
