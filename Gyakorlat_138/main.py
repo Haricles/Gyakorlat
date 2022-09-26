@@ -1,52 +1,61 @@
 '''
-Készíts egy programot, amely képes tárolni:
-- a diákok nevét és osztályát,
-- a tanárok nevét és szakját / szakjait,
-és ezeket meg is tudja jeleníteni a képernyőn egy összefüggő mondat formájában.
-
-Például:
-Szia, a nevem Kiss Péter, és a(z) 10.A osztályba járok.
-Szia, a nevem Horváth Zita, biológia-kémia szakos tanár vagyok.
-Szia, a nevem Schmidt Emil, matematika szakos tanár vagyok.
-
-Használj objektumorientált megoldást!
-- Először gondold végig, milyen osztályokra lesz szükség?
-- Van-e lehetőség öröklődés alkalmazása révén optimálisabb kódot írni?
+Fejleszd tovább az előző programot úgy, hogy az hozzon létre öt Diak-objektumot.
+A nevet egy-egy vezeték és keresztneveket tartalmazó listából állítsa össze véletlenszerűen,
+az osztályt és a születési évet pedig szintén véletlenszerűen generálja! A Diak-objektumokat egy listában tárolja!
+A program a listát bejárva írja ki a diákadatokat a képernyőre!
 '''
+import datetime
+import random
 
-class Szemely():
-    def __init__(self,nev):
+
+class Diak():
+    diak_lakcim="Budapest"
+    vezeteknev= ["Toth","Balogh","Nagy","Kiss","Varga"]
+    keresztnev= ["Virag","Károly","Béla","Gergő","Gizi"]
+    osztalyok=["A","B","C","D"]
+
+    def __init__(self,nev=None,osztaly=None,szulev=0):
         self.nev=nev
-
-    def kiiras(self):
-        print (f"Szia,a nevem {self.nev}", end="")
-
-class Tanar(Szemely):
-    def __init__(self,nev,szak):
-        super().__init__(nev)
-        self.szak=szak
-
-    def kiiras(self):
-        super().kiiras()
-        print (f",{self.szak} szakos tanár vagyok.")
-
-class Diak(Szemely):
-    def __init__(self,nev,osztaly):
-        super().__init__(nev)
         self.osztaly=osztaly
+        self.szulev=szulev
 
-    def kiiras(self):
-        super().kiiras()
-        print(f" és a(z) {self.osztaly} osztályba járok.")
+    def nev_valaszto(self):
+        return random.choice(type(self).vezeteknev) +" "+ random.choice(type(self).keresztnev)
 
+    def osztaly_valaszto(self):
+        return str(random.randint(9,12))+ "."+ random.choice(type(self).osztalyok)
 
+    def diak_eletkor(self):
+        return datetime.datetime.now().year-self.szulev
 
+    def kiiratas(self):
+        print (f"Szia, {self.nev} vagyok, a {self.osztaly} osztályba járok, {self.diak_eletkor()} éves vagyok.")
 
-tanarok=Tanar("Mariann","Matek")
-tanarok.kiiras()
-diakok=Diak("Mariann","10.B")
-diakok.kiiras()
+    @staticmethod
+    def iskola():
+        print ("Harjá x,y iskola!")
+    @classmethod
+    def lakcimkiiras(cls):
+        print (cls.diak_lakcim)
 
+diakok=Diak("Kiss Péter","10.A",2006)
+print (diakok.nev)
+print(diakok.osztaly)
+print(diakok.szulev)
+print(diakok.diak_eletkor())
+diakok.kiiratas()
+
+diakok.iskola()
+diakok.lakcimkiiras()
+
+diakok_01=Diak()
+diakok_02=Diak()
+diakok_03=Diak()
+diakok_04=Diak()
+diakok_05=Diak()
+
+print (diakok.nev_valaszto())
+print (diakok.osztaly_valaszto())
 
 
 
