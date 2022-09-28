@@ -3,8 +3,6 @@ Vágjon fö egy hosszú sztringet 5 karakter hosszú darabokra. Rakja össze a d
 '''
 
 karakter= "valamivanalevegőbenésnemtudomhogymi."
-lista=[]
-
 
 uj_karakter=""
 i=0
