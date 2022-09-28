@@ -7,14 +7,20 @@ karakterlánc nevét és a keresendő karaktert. A függvénynek visszatérési 
 stringbeli indexét kell megadni a karakterláncban. Így például : print megtalal("Juliette &
 Roméo", "&") eredménye :  9
 
+Figyelem   :   Gondolni   kell   minden   lehetséges   esetre.   Arra   is   számítanunk   kell,   hogy   a   függvény
+visszatérési   értékként   egy   speciális   értéket   (például  -1-et)   ad,   ha   a   keresett   karakter   nincs   a
+karakterláncban.
 '''
 
 karakter= "valamivanalevegőbenésnemtudomhogymi."
 
 def megtalal(sztring,megtalalando):
-    return sztring.index(megtalalando)
+    if megtalalando in sztring:
+        return sztring.index(megtalalando)
+    else:
+        return -1
 
-print (megtalal(karakter,"ő"))
+print (megtalal(karakter,"x"))
 
 
 
