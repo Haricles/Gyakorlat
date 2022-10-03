@@ -1,8 +1,6 @@
 '''
-Írjon egy scriptet, ami megszámolja egy szövegfileban a numerikus karaktereket tartalmazó sorokat.
+Írjon egy scriptet, ami egy szövegfileban megszámolja a szavakat.
 '''
-
-
 
 szamlalo=0
 with open("valami.txt","r",encoding="utf-8") as file:
@@ -10,6 +8,19 @@ with open("valami.txt","r",encoding="utf-8") as file:
         lista= elem.strip().split()
         szamlalo += len(lista)
 print (szamlalo)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
