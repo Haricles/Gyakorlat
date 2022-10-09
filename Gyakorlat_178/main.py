@@ -50,8 +50,8 @@ def kiiras(x):
             magassag = elem["Adat"][1]
             kimenet.write(str(nev)+"@"+str(kor)+"#"+str(magassag)+"\n")
 
-def visszaallitas():
-    with open("irott.txt","r",encoding="utf-8") as bemenet:
+def visszaallitas(x):
+    with open(x,"r",encoding="utf-8") as bemenet:
         for elem in bemenet:
             szotaram = {}
             sor = elem.strip().split("@")
@@ -67,4 +67,4 @@ print (szotar_feltoltes(lista))
 szotar_atnezes(lista)
 kiiras(lista)
 
-visszaallitas()
+visszaallitas("irott.txt")
